@@ -1,0 +1,20 @@
+button {
+  cursor: pointer;
+}
+.dashPageContainer {
+  flex-grow: 1;
+  height: 100%;
+  padding: 30px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.active {
+  background-color: #e0e0e0;
+}
+.h2 {
+  margin-bottom: 20px;
+  font-size: 35px;
+  color: #202020;
+}

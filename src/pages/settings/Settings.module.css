@@ -1,0 +1,20 @@
+.photo {
+  border-radius: 50%;
+}
+.infoP {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.signOutBtn {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 1px solid gray;
+  border-radius: 2px;
+  background-color: #f9f9f9;
+}
+.signOutBtn:hover {
+  background-color: #e0e0e0;
+}

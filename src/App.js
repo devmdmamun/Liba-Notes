@@ -8,7 +8,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "./app/features/userSlice";
 import { useEffect } from "react";
-import { auth } from "./firebase/config";
+import { auth, db } from "./firebase/config";
 import { authstatus } from "./app/features/userSlice";
 
 //pages
@@ -24,6 +24,8 @@ import { Notes } from "./pages/notes/Notes";
 import { Report } from "./pages/report/Report";
 import { Files } from "./pages/files/Files";
 import { Store } from "./pages/store/Store";
+import { Loader } from "./components/loader/Loader";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 function App() {
   const user = useSelector(selectUser);
@@ -31,15 +33,33 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unSub = auth.onAuthStateChanged((user) => {
-      dispatch(authstatus(user));
+    const unSub = auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const ref = doc(db, "users", user.uid);
+        // get user document
+        const docSnap = await getDoc(ref);
+
+        // create collection for user if not exist
+        if (docSnap.exists()) {
+          dispatch(authstatus(user));
+        } else {
+          await setDoc(ref, {
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+            email: user.email,
+          });
+          dispatch(authstatus(user));
+        }
+      } else {
+        dispatch(authstatus(user));
+      }
       unSub();
     });
   });
 
   return (
     <div className="App">
-      {authStatus && (
+      {authStatus ? (
         <Router>
           <Routes>
             <Route
@@ -74,6 +94,8 @@ function App() {
             </Route>
           </Routes>
         </Router>
+      ) : (
+        <Loader />
       )}
     </div>
   );

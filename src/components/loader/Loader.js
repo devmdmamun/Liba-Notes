@@ -3,6 +3,7 @@ export const Loader = () => {
   return (
     <div className={classes.container}>
       <div className={classes.loader}></div>
+      <p>Loading...</p>
     </div>
   );
 };

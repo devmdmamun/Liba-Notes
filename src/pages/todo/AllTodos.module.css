@@ -1,0 +1,9 @@
+.allTodoContainer {
+  margin-top: 30px;
+}
+.todoDiv {
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+}

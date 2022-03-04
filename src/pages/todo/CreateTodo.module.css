@@ -1,0 +1,86 @@
+/* .pageContainer {
+  max-width: 900px;
+  margin: auto;
+} */
+.container {
+  background-color: white;
+  padding: 20px 30px;
+  border: 1px solid #a7a7a7;
+}
+.todoForm {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.backBtn {
+  margin: 20px 0 10px;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 18px;
+  background-color: white;
+  border: 1px solid #a7a7a7;
+  margin-right: 10px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  color: #474747;
+}
+.label span,
+.label input {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.label input {
+  padding: 10px 15px;
+}
+.addList {
+  width: 100%;
+  position: relative;
+}
+.addList input {
+  width: 100%;
+  padding-right: 45px;
+}
+.addList button {
+  width: 30px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.subBtn {
+  width: max-content;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.previewContainer {
+  background-color: white;
+  padding: 20px 30px;
+  border: 1px solid #a7a7a7;
+}
+.previewTitle {
+  font-size: 30px;
+}
+.previewContainer ul {
+  margin: 20px 0 0 20px;
+}
+.previewContainer li {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+.messageP,
+.messagePw {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+.messagePw {
+  color: red;
+}

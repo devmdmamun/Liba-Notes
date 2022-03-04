@@ -10,6 +10,7 @@ import { selectUser } from "./app/features/userSlice";
 import { useEffect } from "react";
 import { auth, db } from "./firebase/config";
 import { authstatus } from "./app/features/userSlice";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 
 //pages
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -17,6 +18,7 @@ import { Home } from "./pages/home/Home";
 import { Signup } from "./pages/signup/Signup";
 import { Settings } from "./pages/settings/Settings";
 import { Todo } from "./pages/todo/Todo";
+import { CreateTodo } from "./pages/todo/CreateTodo";
 import { Friends } from "./pages/friends/Friends";
 import { Team } from "./pages/team/Team";
 import { Messages } from "./pages/messages/Messages";
@@ -25,7 +27,6 @@ import { Report } from "./pages/report/Report";
 import { Files } from "./pages/files/Files";
 import { Store } from "./pages/store/Store";
 import { Loader } from "./components/loader/Loader";
-import { doc, getDoc, setDoc } from "firebase/firestore";
 
 function App() {
   const user = useSelector(selectUser);
@@ -86,6 +87,7 @@ function App() {
               <Route path="team" element={<Team />} />
               <Route path="messages" element={<Messages />} />
               <Route path="todo" element={<Todo />} />
+              <Route path="todo/create" element={<CreateTodo />} />
               <Route path="notes" element={<Notes />} />
               <Route path="files" element={<Files />} />
               <Route path="store" element={<Store />} />

@@ -27,7 +27,11 @@ export const AllTodos = () => {
       {todos.map((item) => (
         <div key={item.id} className={classes.todoDiv}>
           <h3>{item.title}</h3>
-          <p>{item.createdAt.toDate().toString()}</p>
+          <ul>
+            {item.list.map((li) => (
+              <li key={li}>{li}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>

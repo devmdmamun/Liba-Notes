@@ -20,7 +20,7 @@ export const AllTodos = () => {
       setTodo(result);
     };
     getFbData();
-  }, []);
+  }, [user.uid]);
 
   return (
     <div className={classes.allTodoContainer}>

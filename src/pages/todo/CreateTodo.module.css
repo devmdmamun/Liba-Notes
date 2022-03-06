@@ -1,7 +1,14 @@
-/* .pageContainer {
-  max-width: 900px;
+.h2 {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.pageContainer {
+  max-width: 700px;
   margin: auto;
-} */
+  position: relative;
+  min-height: 200px;
+}
 .container {
   background-color: white;
   padding: 20px 30px;
@@ -12,14 +19,34 @@
   display: flex;
   flex-direction: column;
 }
-.backBtn {
+.cancelBtn,
+.previewBtn {
   margin: 20px 0 10px;
   font-weight: bold;
   padding: 5px 10px;
   font-size: 18px;
   background-color: white;
-  border: 1px solid #a7a7a7;
+  border-radius: 2px;
   margin-right: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.cancelBtn {
+  color: #fb2e01;
+  border: 1px solid #fb2e01;
+}
+.cancelBtn:hover {
+  background-color: #fb2e01;
+  color: white;
+}
+.previewBtn,
+.subBtn {
+  color: #04aa6d;
+  border: 1px solid #04aa6d;
+}
+.previewBtn:hover,
+.subBtn:hover {
+  background-color: #04aa6d;
+  color: white;
 }
 .label {
   display: flex;
@@ -58,6 +85,8 @@
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
 }
 .previewContainer {
   background-color: white;
@@ -68,7 +97,7 @@
   font-size: 30px;
 }
 .previewContainer ul {
-  margin: 20px 0 0 20px;
+  margin: 20px 0 20px 20px;
 }
 .previewContainer li {
   font-size: 18px;
@@ -77,10 +106,22 @@
 }
 .messageP,
 .messagePw {
-  color: green;
+  color: #04aa6d;
   font-size: 18px;
   font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: #ffbb0088;
+  padding: 10px 20px;
+  color: black;
+  line-height: 1.4;
 }
-.messagePw {
-  color: red;
+.messageP {
+  background-color: #04aa6d8e;
+}
+.alertIcon {
+  width: 20px;
+  margin-right: 10px;
 }

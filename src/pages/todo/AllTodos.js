@@ -1,9 +1,11 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/features/userSlice";
 import { db } from "../../firebase/config";
+import { ReactComponent as Bin } from "../../assets/icons/bin.svg";
 import classes from "./AllTodos.module.css";
+import { Loader } from "../../components/loader/Loader";
 
 export const AllTodos = () => {
   const user = useSelector(selectUser);
@@ -11,29 +13,41 @@ export const AllTodos = () => {
 
   useEffect(() => {
     const colRef = collection(db, "users", user.uid, "todos");
-    const getFbData = async () => {
-      const docSnap = await getDocs(colRef);
+    const unsub = onSnapshot(colRef, (snapshot) => {
       let result = [];
-      docSnap.forEach((doc) => {
-        result.push({ id: doc.id, ...doc.data() });
+      snapshot.docs.forEach((docu) => {
+        result.push({ id: docu.id, ...docu.data() });
       });
       setTodo(result);
-    };
-    getFbData();
+      console.log(result);
+    });
+    return unsub;
   }, [user.uid]);
 
   return (
     <div className={classes.allTodoContainer}>
-      {todos.map((item) => (
-        <div key={item.id} className={classes.todoDiv}>
-          <h3>{item.title}</h3>
-          <ul>
-            {item.list.map((li) => (
-              <li key={li}>{li}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {todos.length < 1 ? (
+        <Loader />
+      ) : (
+        todos.map((item) => (
+          <div key={item.id} className={classes.todoDiv}>
+            <div className={classes.listHead}>
+              <h3>{item.title}</h3>
+              <Bin
+                onClick={async () => {
+                  await deleteDoc(doc(db, "users", user.uid, "todos", item.id));
+                }}
+                className={classes.icon}
+              />
+            </div>
+            <ul>
+              {item.list.map((li) => (
+                <li key={li}>{li}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      )}
     </div>
   );
 };

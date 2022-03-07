@@ -64,6 +64,7 @@ export const CreateTodo = () => {
                   <label className={classes.label}>
                     <span>Title</span>
                     <input
+                      autoFocus
                       type="text"
                       required
                       placeholder="Name your list"

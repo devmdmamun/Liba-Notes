@@ -11,13 +11,13 @@ export const Home = () => {
       <h2 className="h2">Hello, {user.displayName}.</h2>
       <p className={classes.info}>
         We're glad that you joined our community. As you can see, we are still
-        working on this project.Please be patient, we will add all the features
+        working on this project. Please be patient, we will add all the features
         soon. We are creating this project for educational purposes.
       </p>
       <h3 className={classes.h3}>Current status {"(*> _ <*)"} </h3>
       <p className={classes.info}>
         Currently we only have{" "}
-        <Link className={classes.link} to="todo">
+        <Link className={classes.link} to="/todo">
           TODO
         </Link>{" "}
         feature. So go check it out. If you wanna logout, go to settings then

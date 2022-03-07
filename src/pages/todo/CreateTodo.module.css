@@ -10,9 +10,10 @@
   min-height: 200px;
 }
 .container {
-  background-color: white;
+  background-color: #ececec;
   padding: 20px 30px;
-  border: 1px solid #a7a7a7;
+  border-radius: 5px;
+  /* border: 1px solid #a7a7a7; */
 }
 .todoForm {
   max-width: 600px;
@@ -61,6 +62,12 @@
 }
 .label input {
   padding: 10px 15px;
+  border: 1px solid gray;
+  background-color: #d6d6d6;
+  border-radius: 5px;
+}
+.label input:focus {
+  outline: 1px solid black;
 }
 .addList {
   width: 100%;
@@ -91,7 +98,7 @@
 .previewContainer {
   background-color: white;
   padding: 20px 30px;
-  border: 1px solid #a7a7a7;
+  /* border: 1px solid #a7a7a7; */
 }
 .previewTitle {
   font-size: 30px;

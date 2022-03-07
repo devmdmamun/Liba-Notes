@@ -25,7 +25,7 @@ export const CreateTodo = () => {
     if (items.length < 10) {
       const item = newItem.trim();
       if (item && !items.includes(item)) {
-        addItems((prevItem) => [...prevItem, newItem]);
+        addItems((prevItem) => [...prevItem, { item: newItem, done: false }]);
       }
       setNewItem("");
       itemRef.current.focus();
@@ -115,7 +115,7 @@ export const CreateTodo = () => {
                 <h3 className={classes.previewTitle}>{title}</h3>
                 <ul>
                   {items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>{item.item}</li>
                   ))}
                 </ul>
                 <p className={classes.messagePw}>

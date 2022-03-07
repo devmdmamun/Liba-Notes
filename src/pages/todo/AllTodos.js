@@ -1,4 +1,12 @@
-import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import {
+  arrayRemove,
+  arrayUnion,
+  collection,
+  deleteDoc,
+  doc,
+  onSnapshot,
+  updateDoc,
+} from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/features/userSlice";
@@ -10,6 +18,7 @@ import { Loader } from "../../components/loader/Loader";
 export const AllTodos = () => {
   const user = useSelector(selectUser);
   const [todos, setTodo] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const colRef = collection(db, "users", user.uid, "todos");
@@ -19,14 +28,14 @@ export const AllTodos = () => {
         result.push({ id: docu.id, ...docu.data() });
       });
       setTodo(result);
-      console.log(result);
+      setLoading(false);
     });
     return unsub;
   }, [user.uid]);
 
   return (
     <div className={classes.allTodoContainer}>
-      {todos.length < 1 ? (
+      {loading ? (
         <Loader />
       ) : (
         todos.map((item) => (
@@ -42,7 +51,25 @@ export const AllTodos = () => {
             </div>
             <ul>
               {item.list.map((li) => (
-                <li key={li}>{li}</li>
+                <li
+                  onClick={async () => {
+                    const obj = li;
+                    const docRef = doc(db, "users", user.uid, "todos", item.id);
+                    await updateDoc(docRef, {
+                      list: arrayUnion({
+                        item: li.item,
+                        done: !li.done,
+                      }),
+                    });
+                    await updateDoc(docRef, {
+                      list: arrayRemove(obj),
+                    });
+                  }}
+                  key={li.item + li.done}
+                  className={li.done ? classes.done : classes.todoLi}
+                >
+                  {li.item}
+                </li>
               ))}
             </ul>
           </div>

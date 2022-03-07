@@ -6,6 +6,7 @@
   overflow: auto;
 }
 .sideItem {
+  transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
   height: 45px;
@@ -23,4 +24,11 @@
 }
 a:hover {
   background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar {
+    position: absolute;
+    z-index: 9;
+  }
 }

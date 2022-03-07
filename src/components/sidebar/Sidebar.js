@@ -11,10 +11,20 @@ import { ReactComponent as Settings } from "../../assets/icons/settings.svg";
 import { ReactComponent as Report } from "../../assets/icons/report.svg";
 import { ReactComponent as Friend } from "../../assets/icons/friend.svg";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sideNavR } from "../../app/features/visibilitySlice";
 
 export const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    if (window.innerWidth < 500) {
+      dispatch(sideNavR());
+    }
+  };
+
   return (
-    <div className={classes.sidebar}>
+    <div onClick={handleClick} className={classes.sidebar}>
       <NavLink to="/home" className={classes.sideItem}>
         <Home className={classes.icon} />
         <span className={classes.itemName}>Home</span>

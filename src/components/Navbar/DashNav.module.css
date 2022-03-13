@@ -1,3 +1,6 @@
+.dashNavCont {
+  min-height: 70px;
+}
 .dashNav {
   min-height: 70px;
   width: 100%;
@@ -6,6 +9,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 25px;
+  position: fixed;
+  box-shadow: 0px 1px 5px 1px rgba(219, 219, 219, 0.75);
+  -webkit-box-shadow: 0px 1px 5px 1px rgba(219, 219, 219, 0.75);
+  -moz-box-shadow: 0px 1px 5px 1px rgba(219, 219, 219, 0.75);
+  z-index: 9;
 }
 .icon {
   width: 30px;

@@ -12,14 +12,16 @@ export default function DashNav() {
     dispatch(sideNavR());
   };
   return (
-    <div className={classes.dashNav}>
-      <div className={classes.leftnav}>
-        <Bars onClick={handleClick} className={classes.icon} />
-        <h1 className={classes.logo}>SocialLig</h1>
-      </div>
-      <div className={classes.rightnav}>
-        <Bell className={`${classes.icon} ${classes.bell}`} />
-        <Avatar />
+    <div className={classes.dashNavCont}>
+      <div className={classes.dashNav}>
+        <div className={classes.leftnav}>
+          <Bars onClick={handleClick} className={classes.icon} />
+          <h1 className={classes.logo}>SocialLig</h1>
+        </div>
+        <div className={classes.rightnav}>
+          <Bell className={`${classes.icon} ${classes.bell}`} />
+          <Avatar />
+        </div>
       </div>
     </div>
   );

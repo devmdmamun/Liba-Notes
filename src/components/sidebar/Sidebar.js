@@ -24,47 +24,49 @@ export const Sidebar = () => {
   };
 
   return (
-    <div onClick={handleClick} className={classes.sidebar}>
-      <NavLink to="/home" className={classes.sideItem}>
-        <Home className={classes.icon} />
-        <span className={classes.itemName}>Home</span>
-      </NavLink>
-      <NavLink to="/friends" className={classes.sideItem}>
-        <Friend className={classes.icon} />
-        <span className={classes.itemName}>Friends</span>
-      </NavLink>
-      <NavLink to="/team" className={classes.sideItem}>
-        <Team className={classes.icon} />
-        <span className={classes.itemName}>Team</span>
-      </NavLink>
-      <NavLink to="/messages" className={classes.sideItem}>
-        <Message className={classes.icon} />
-        <span className={classes.itemName}>Messages</span>
-      </NavLink>
-      <NavLink to="/todo" className={classes.sideItem}>
-        <Todo className={classes.icon} />
-        <span className={classes.itemName}>Todo</span>
-      </NavLink>
-      <NavLink to="/notes" className={classes.sideItem}>
-        <Note className={classes.icon} />
-        <span className={classes.itemName}>Notes</span>
-      </NavLink>
-      <NavLink to="/files" className={classes.sideItem}>
-        <Files className={classes.icon} />
-        <span className={classes.itemName}>Files</span>
-      </NavLink>
-      <NavLink to="/store" className={classes.sideItem}>
-        <Market className={classes.icon} />
-        <span className={classes.itemName}>Store</span>
-      </NavLink>
-      <NavLink to="/settings" className={classes.sideItem}>
-        <Settings className={classes.icon} />
-        <span className={classes.itemName}>Settings</span>
-      </NavLink>
-      <NavLink to="/report" className={classes.sideItem}>
-        <Report className={classes.icon} />
-        <span className={classes.itemName}>Report</span>
-      </NavLink>
+    <div className={classes.sidebarContainer}>
+      <div onClick={handleClick} className={classes.sidebar}>
+        <NavLink to="/home" className={classes.sideItem}>
+          <Home className={classes.icon} />
+          <span className={classes.itemName}>Home</span>
+        </NavLink>
+        <NavLink to="/friends" className={classes.sideItem}>
+          <Friend className={classes.icon} />
+          <span className={classes.itemName}>Friends</span>
+        </NavLink>
+        <NavLink to="/team" className={classes.sideItem}>
+          <Team className={classes.icon} />
+          <span className={classes.itemName}>Team</span>
+        </NavLink>
+        <NavLink to="/messages" className={classes.sideItem}>
+          <Message className={classes.icon} />
+          <span className={classes.itemName}>Messages</span>
+        </NavLink>
+        <NavLink to="/todo" className={classes.sideItem}>
+          <Todo className={classes.icon} />
+          <span className={classes.itemName}>Todo</span>
+        </NavLink>
+        <NavLink to="/notes" className={classes.sideItem}>
+          <Note className={classes.icon} />
+          <span className={classes.itemName}>Notes</span>
+        </NavLink>
+        <NavLink to="/files" className={classes.sideItem}>
+          <Files className={classes.icon} />
+          <span className={classes.itemName}>Files</span>
+        </NavLink>
+        <NavLink to="/store" className={classes.sideItem}>
+          <Market className={classes.icon} />
+          <span className={classes.itemName}>Store</span>
+        </NavLink>
+        <NavLink to="/settings" className={classes.sideItem}>
+          <Settings className={classes.icon} />
+          <span className={classes.itemName}>Settings</span>
+        </NavLink>
+        <NavLink to="/report" className={classes.sideItem}>
+          <Report className={classes.icon} />
+          <span className={classes.itemName}>Report</span>
+        </NavLink>
+      </div>
     </div>
   );
 };

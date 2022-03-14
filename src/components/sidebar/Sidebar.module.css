@@ -1,13 +1,14 @@
 .sidebarContainer {
-  width: 280px;
+  min-width: 215px;
+  height: calc(100vh - 70px);
 }
 .sidebar {
-  min-width: 230px;
+  min-width: inherit;
+  height: inherit;
+  position: fixed;
   padding: 15px 0;
   background-color: white;
-  height: calc(100vh - 70px);
   overflow: auto;
-  position: fixed;
   z-index: 9;
 }
 .sideItem {
@@ -15,7 +16,7 @@
   display: flex;
   align-items: center;
   margin: 0px auto;
-  padding: 10px 20px;
+  padding: 12px 0 12px 25px;
 }
 .icon {
   width: 30px;
@@ -25,7 +26,13 @@
   font-size: 20px;
   font-weight: 600;
   margin: 0 10px;
+  flex-grow: 1;
 }
 a:hover {
   background-color: #e0e0e0;
+}
+@media screen and (max-width: 550px) {
+  .sidebarContainer {
+    position: absolute;
+  }
 }

@@ -27,6 +27,7 @@ import { Report } from "./pages/report/Report";
 import { Files } from "./pages/files/Files";
 import { Store } from "./pages/store/Store";
 import { Loader } from "./components/loader/Loader";
+import { Profile } from "./pages/profile/Profile";
 
 function App() {
   const user = useSelector(selectUser);
@@ -93,6 +94,7 @@ function App() {
               <Route path="store" element={<Store />} />
               <Route path="settings" element={<Settings />} />
               <Route path="report" element={<Report />} />
+              <Route path="profile" element={<Profile />} />
             </Route>
           </Routes>
         </Router>

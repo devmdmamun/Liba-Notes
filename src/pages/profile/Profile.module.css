@@ -1,0 +1,72 @@
+.profileCont {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  height: max-content;
+}
+.profileHead {
+  background-color: white;
+}
+.profileNav {
+  width: 100%;
+  margin: 20px 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+.profileNav a {
+  /* flex: 1; */
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+  margin: 0 10px;
+}
+.profileBottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+}
+.postTop {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sortPost,
+.createPost {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #dddddd;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.createPost {
+  flex-grow: 0.9;
+  padding: 10px 20px;
+}
+.createPost span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.sortPost span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+.PTIcon {
+  height: 25px;
+}
+@media screen and (max-width: 550px) {
+  .sortPost span {
+    display: none;
+  }
+}

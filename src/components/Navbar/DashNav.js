@@ -4,6 +4,7 @@ import { ReactComponent as Bell } from "../../assets/icons/bell.svg";
 import Avatar from "../avatar/Avatar";
 import { useDispatch } from "react-redux";
 import { sideNavR } from "../../app/features/visibilitySlice";
+import { Link } from "react-router-dom";
 
 export default function DashNav() {
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ export default function DashNav() {
         </div>
         <div className={classes.rightnav}>
           <Bell className={`${classes.icon} ${classes.bell}`} />
-          <Avatar />
+          <Link to="/profile">
+            <Avatar />
+          </Link>
         </div>
       </div>
     </div>

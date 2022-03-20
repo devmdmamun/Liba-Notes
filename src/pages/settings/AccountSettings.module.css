@@ -1,0 +1,98 @@
+.header h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+}
+.header p {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+  font-weight: 500;
+  color: #686868;
+  line-height: 1.3;
+}
+.public {
+  margin-top: 30px;
+  padding: 20px 0 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+.public h3 {
+  margin: 0 0 20px 30px;
+}
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 20px;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.photo:hover,
+.infoUpdateBtn:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+.image {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.userImage {
+  width: 100%;
+  height: 100%;
+}
+.cameraIcon {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(95, 95, 95, 0.61);
+  position: absolute;
+  bottom: 0;
+}
+.icon {
+  width: 20px;
+  fill: #cacaca;
+  padding: 5px 0;
+}
+.infoUpdateBtn {
+  display: flex;
+  margin: 5px 20px;
+  border-radius: 5px;
+  padding: 10px;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.angleIconDiv {
+  height: inherit;
+  width: 70px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.angleIcon {
+  height: 22px;
+}
+.infoTexts {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.infoLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #686868;
+  margin-bottom: 10px;
+}
+.hr {
+  height: 1px;
+  background-color: #e0e0e0;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+}

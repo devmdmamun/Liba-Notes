@@ -62,7 +62,7 @@ export const AccountSettings = () => {
         <div className={classes.infoUpdateBtn}>
           <div className={classes.infoTexts}>
             <span className={classes.infoLabel}>Bio</span>
-            <span>{user.Bio}</span>
+            <span>{user.bio}</span>
           </div>
           <div className={classes.angleIconDiv}>
             <RightAngle className={classes.angleIcon} />
@@ -74,7 +74,7 @@ export const AccountSettings = () => {
         <div className={classes.infoUpdateBtn}>
           <div className={classes.infoTexts}>
             <span className={classes.infoLabel}>Portfolio Link</span>
-            <span>{user.PLink}</span>
+            <span>{user.pLink}</span>
           </div>
           <div className={classes.angleIconDiv}>
             <RightAngle className={classes.angleIcon} />

@@ -21,7 +21,8 @@
   cursor: pointer;
 }
 .logo {
-  margin: 0 20px;
+  margin: 0;
+  height: 70px;
 }
 .leftnav,
 .rightnav {

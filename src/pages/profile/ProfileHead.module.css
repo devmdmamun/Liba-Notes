@@ -1,17 +1,22 @@
-.banner {
-  width: 100%;
-  max-height: 200px;
-  height: 100%;
-  background-color: #8d8d8d;
+.profileHeadDiv {
+  max-width: 700px;
+  margin: auto;
 }
-.banner img {
-  width: 100%;
+.hTop {
+  width: 360px;
+  padding: 30px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 .profileImg {
-  width: 130px;
-  margin: -75px 0 0 15px;
-  border: 5px solid black;
+  width: 70px;
+  height: 70px;
+  border: 3px solid black;
   border-radius: 50%;
+  overflow: hidden;
+  background-color: #8d8d8d;
 }
 .bottomHeader,
 .profileNav {
@@ -20,17 +25,19 @@
 .name {
   font-size: 25px;
   font-weight: bold;
-  margin: 10px 0 5px 0;
+  margin-bottom: 5px;
 }
 .bio {
   font-size: 18px;
   font-weight: 600;
   margin-top: 15px;
+  text-align: center;
 }
 .links {
   margin: 10px 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .links span,
 .links a {

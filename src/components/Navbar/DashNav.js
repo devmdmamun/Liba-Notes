@@ -20,7 +20,9 @@ export default function DashNav() {
       <div className={classes.dashNav}>
         <div className={classes.leftnav}>
           <Bars onClick={handleClick} className={classes.icon} />
-          <Logo className={classes.logo} />
+          <Link to="home">
+            <Logo className={classes.logo} />
+          </Link>
         </div>
         <div className={classes.rightnav}>
           <Bell className={`${classes.icon} ${classes.bell}`} />

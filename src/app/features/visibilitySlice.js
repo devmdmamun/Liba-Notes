@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let sideV;
-window.innerWidth < 500 ? (sideV = false) : (sideV = true);
 export const visibilitySlice = createSlice({
   name: "visibility",
   initialState: {
-    sideNavVi: sideV,
+    sideNavVi: false,
   },
   reducers: {
     sideNavR: (state) => {

@@ -26,14 +26,14 @@ export const ProfileHead = () => {
         </div>
         <p className={classes.bio}>{user.bio}</p>
         <div className={classes.links}>
-          <Clink className={classes.Clink} />
+          {user.pLink ? <Clink className={classes.Clink} /> : null}
           <a
             className={classes.webLink}
-            href="https://devmdmamun.com"
+            href={"https://" + user.pLink}
             target="_blank"
             rel="noreferrer"
           >
-            DevMdMamun.com
+            {user.pLink}
           </a>
         </div>
       </div>

@@ -28,7 +28,7 @@
   margin-bottom: 5px;
 }
 .bio {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   margin-top: 15px;
   text-align: center;
@@ -39,15 +39,15 @@
   align-items: center;
   justify-content: center;
 }
-.links span,
 .links a {
   font-weight: bold;
-  margin-right: 10px;
+  margin: 0 0 10px 5px;
   cursor: pointer;
 }
 .Clink {
   width: 20px;
   fill: blue;
+  margin-bottom: 10px;
 }
 .webLink {
   text-decoration: underline;

@@ -17,10 +17,15 @@ a {
   color: inherit;
 }
 .active {
-  background-color: #e0e0e0;
+  background-color: white;
 }
 .h2 {
   margin-bottom: 20px;
   font-size: 35px;
   color: #202020;
+}
+@media screen and (max-width: 550px) {
+  .dashPageContainer {
+    padding: 30px 5px;
+  }
 }

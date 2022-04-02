@@ -1,8 +1,8 @@
 .postDiv {
-  max-width: 600px;
+  max-width: 550px;
   width: 100%;
-  background-color: white;
-  margin: 15px 0;
+  background-color: #f0f1f5;
+  margin: 15px 0 0;
   border-radius: 5px;
 }
 .postTop {
@@ -21,45 +21,37 @@
   font-weight: 500;
 }
 .cText {
-  padding: 0 20px;
+  padding: 0 20px 5px;
 }
 .cText p {
   font-size: 17px;
   line-height: 1.4;
 }
-.postImg {
-  max-width: 100%;
-  height: auto;
-  padding: 20px;
-  margin: 0 auto;
-  border-radius: 10px;
-}
 .action {
+  margin-top: 10px;
   display: flex;
   justify-content: space-around;
   width: 100%;
-  /* padding: 20px 20px 10px; */
-  padding-bottom: 10px;
+  border-top: 1px solid #e0e0e0;
 }
 .actionItems {
-  /* width: 150px; */
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   cursor: pointer;
-  padding: 12px 10px;
+  margin: 10px 0;
   border-radius: 5px;
   transition: all 0.5s ease;
 }
-.actionItems span {
+/* .actionItems span {
   font-weight: bold;
   color: #727272;
   transition: all 0.3s ease;
-}
+} */
 .actionIcon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  /* height: 20px; */
   fill: #727272;
-  margin: 0 10px 0 0;
+  /* margin: 0 10px 0 0; */
   transition: all 0.5s ease;
 }
 .actionItems:hover {

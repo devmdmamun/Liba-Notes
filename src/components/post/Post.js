@@ -1,11 +1,13 @@
+// styles
 import classes from "./Post.module.css";
 
+// assets
 import Avatar from "../../components/avatar/Avatar";
-import Soalig from "../../assets/SocialLig.png";
-// svg component
 import { ReactComponent as Like } from "../../assets/icons/like.svg";
 import { ReactComponent as Comment } from "../../assets/icons/comment.svg";
 import { ReactComponent as Share } from "../../assets/icons/share.svg";
+
+// packages and hooks
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/features/userSlice";
 
@@ -26,16 +28,15 @@ export const Post = () => {
           be better:- SocialLig, Soalig or something else.
         </p>
       </div>
-      <img className={classes.postImg} src={Soalig} alt="post" />
       <div className={classes.action}>
         <div className={classes.actionItems}>
-          <Like className={classes.actionIcon} /> <span>Like</span>
+          <Like className={classes.actionIcon} />
         </div>
         <div className={classes.actionItems}>
-          <Comment className={classes.actionIcon} /> <span>Comment</span>
+          <Comment className={classes.actionIcon} />
         </div>
         <div className={classes.actionItems}>
-          <Share className={classes.actionIcon} /> <span>Share</span>
+          <Share className={classes.actionIcon} />
         </div>
       </div>
     </div>

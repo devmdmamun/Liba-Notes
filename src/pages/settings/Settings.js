@@ -32,8 +32,3 @@ export const Settings = () => {
     </div>
   );
 };
-
-// <h2 className="h2">Settings</h2>
-// <p className={classes.infoP}>Name: {user.displayName}</p>
-// <p className={classes.infoP}>Email: {user.email}</p>
-// <p className={classes.infoP}>ID: {user.uid}</p>

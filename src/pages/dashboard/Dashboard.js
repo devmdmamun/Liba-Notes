@@ -1,15 +1,28 @@
-import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+// Style
+import classes from "./Dashboard.module.css";
+// Components
 import DashNav from "../../components/Navbar/DashNav";
 import { Sidebar } from "../../components/sidebar/Sidebar";
-import classes from "./Dashboard.module.css";
+//packages
+import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
+import { sidebarVToggle } from "../../app/features/sidebarVSlice";
+
 export default function Dashboard() {
-  let sideNavVis = useSelector((state) => state.visibility.sideNavVi);
+  const sidebarStatus = useSelector(
+    (state) => state.sidebarV.sidebarVisibility
+  );
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    if (sidebarStatus === false) return;
+    dispatch(sidebarVToggle());
+  };
+
   return (
-    <div className={classes.dashboard}>
+    <div onClick={handleClick} className={classes.dashboard}>
       <DashNav />
       <div className={classes.dashContent}>
-        {sideNavVis && <Sidebar />}
+        <Sidebar />
         <Outlet />
       </div>
     </div>

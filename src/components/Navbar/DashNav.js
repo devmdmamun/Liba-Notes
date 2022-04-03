@@ -14,8 +14,12 @@ import { sidebarVToggle } from "../../app/features/sidebarVSlice";
 export default function DashNav() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
+  const sidebarStatus = useSelector(
+    (state) => state.sidebarV.sidebarVisibility
+  );
 
   const handleClick = () => {
+    if (sidebarStatus === true) return;
     dispatch(sidebarVToggle());
   };
 

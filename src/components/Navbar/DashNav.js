@@ -34,7 +34,7 @@ export default function DashNav() {
         </div>
         <div className={classes.rightNav}>
           <Bell className={`${classes.icon} ${classes.bell}`} />
-          <Link to={user.uid ? user.uid : "home"}>
+          <Link to={user.uid ? `/u/${user.uid}` : "home"}>
             <Avatar />
           </Link>
         </div>

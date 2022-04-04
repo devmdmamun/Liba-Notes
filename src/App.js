@@ -100,7 +100,7 @@ function App() {
               <Route path="settings" element={<Settings />} />
               <Route path="settings/account" element={<AccountSettings />} />
               <Route path="report" element={<Report />} />
-              <Route path="/:id" element={<Profile />} />
+              <Route path="/u/:id" element={<Profile />} />
             </Route>
           </Routes>
         </Router>

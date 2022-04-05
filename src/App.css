@@ -26,6 +26,6 @@ a {
 }
 @media screen and (max-width: 550px) {
   .dashPageContainer {
-    padding: 30px 5px;
+    padding: 30px 10px;
   }
 }

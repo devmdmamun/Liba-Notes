@@ -1,40 +1,78 @@
 // style
 import classes from "./Profile.module.css";
 
-// packages
+// packages & hooks
+import { useParams } from "react-router-dom";
+import { useDocument } from "../../hooks/useDocument";
 import { NavLink } from "react-router-dom";
-// import { useParams } from "react-router-dom";
+// components and assets
+import { ReactComponent as Clink } from "../../assets/icons/link.svg";
+import { Loader } from "../../components/loader/Loader";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/features/userSlice";
-
-// components and assets
-import { Post } from "../../components/post/Post";
-import { ProfileHead } from "./ProfileHead";
+import { NotFound } from "../notFound/NotFound";
 
 export const Profile = () => {
-  // const { id } = useParams();
+  const { id } = useParams();
   const user = useSelector(selectUser);
-
+  const { document, error } = useDocument("users", id);
+  if (error) {
+    return <div>{error}</div>;
+  } else if (document && Object.keys(document).length === 0) {
+    return <NotFound />;
+  }
   return (
-    <div className={classes.profileCont}>
-      <div className={classes.profileHead}>
-        <ProfileHead />
-        <div className={classes.profileNav}>
-          <NavLink className={classes.activePLink} to={"/" + user.uid}>
-            Posts
-          </NavLink>
-          <NavLink to="/personal">Personal</NavLink>
-          <NavLink to="/team">Teams</NavLink>
-          <NavLink to="/settings">Settings</NavLink>
+    <>
+      {!document ? (
+        <Loader />
+      ) : (
+        <div className={classes.profileContainer}>
+          <div className={classes.profileHead}>
+            <div className={classes.profileHeadDiv}>
+              {/* User Info */}
+              <div className={classes.headerTop}>
+                <img
+                  className={classes.profileImg}
+                  src={document.photoURL}
+                  alt="Profile"
+                />
+                <div>
+                  <p className={classes.name}>{document.displayName}</p>
+                  <span>{document.uid}</span>
+                </div>
+              </div>
+              {/* User bio */}
+              <p className={classes.bio}>{document.bio}</p>
+              {/* Users external links */}
+              <div className={classes.links}>
+                {document.pLink ? <Clink className={classes.Clink} /> : null}
+                <a
+                  className={classes.webLink}
+                  href={"https://" + document.pLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {document.pLink}
+                </a>
+              </div>
+            </div>
+            {/* profile navigation start */}
+            <div className={classes.profileNav}>
+              <NavLink className={classes.activePNL} to={"/" + document.uid}>
+                Posts
+              </NavLink>
+              {user.uid === id ? (
+                <>
+                  <NavLink to="/personal">Personal</NavLink>
+                  <NavLink to="/team">Teams</NavLink>
+                  <NavLink to="/settings">Settings</NavLink>
+                </>
+              ) : null}
+            </div>
+            {/* profile navigation end */}
+          </div>
         </div>
-      </div>
-      <div className={classes.profileBottom}>
-        <div className={classes.allPost}>
-          <Post />
-          <Post />
-          <Post />
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };

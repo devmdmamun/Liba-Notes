@@ -1,4 +1,4 @@
-.profileCont {
+.profileContainer {
   width: 100%;
   margin: 0 auto;
   background-color: white;
@@ -7,6 +7,59 @@
 .profileHead {
   background-color: #f4f5f7;
   border-bottom: 1px solid #e0e0e0;
+}
+.profileHeadDiv {
+  max-width: 700px;
+  margin: auto;
+}
+.headerTop {
+  width: 360px;
+  padding: 30px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.profileImg {
+  width: 70px;
+  height: 70px;
+  border: 3px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #8d8d8d;
+}
+.profileNav {
+  padding: 0 20px;
+}
+.name {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.bio {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 15px;
+  text-align: center;
+}
+.links {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.links a {
+  font-weight: bold;
+  margin: 0 0 10px 5px;
+  cursor: pointer;
+}
+.Clink {
+  width: 20px;
+  fill: blue;
+  margin-bottom: 10px;
+}
+.webLink {
+  text-decoration: underline;
 }
 .profileNav {
   max-width: 600px;
@@ -23,7 +76,7 @@
   border-radius: 5px 5px 0 0;
   margin: 0 5px;
   width: fit-content;
-  background-color: #e0e0e0;
+  background-color: #e7e7e7;
   border: 1px solid #e0e0e0;
 }
 .profileNav a:hover {
@@ -31,59 +84,7 @@
   border: 1px solid #e0e0e0;
   border-bottom: none;
 }
-.profileNav .activePLink {
+.profileNav .activePNL {
   background-color: white;
-  border: 1px solid #e0e0e0;
-  border-bottom: none;
-}
-.profileBottom {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  align-items: center;
-}
-.postTop {
-  display: flex;
-  justify-content: space-between;
-  max-width: 600px;
-  width: 100%;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.sortPost,
-.createPost {
-  display: flex;
-  align-items: center;
-  border-radius: 50px;
-  background-color: #dddddd;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-.createPost {
-  flex-grow: 0.9;
-  padding: 10px 20px;
-}
-.createPost span {
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 20px;
-}
-.sortPost span {
-  font-weight: bold;
-  margin-left: 5px;
-}
-.PTIcon {
-  height: 25px;
-}
-/* .allPost {
-  max-width: 650px;
-  width: 100%;
-} */
-@media screen and (max-width: 550px) {
-  .sortPost span {
-    display: none;
-  }
+  border-bottom: white;
 }

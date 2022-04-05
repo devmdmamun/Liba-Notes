@@ -31,6 +31,7 @@ import { Files } from "./pages/files/Files";
 import { Loader } from "./components/loader/Loader";
 import { Profile } from "./pages/profile/Profile";
 import { AccountSettings } from "./pages/settings/AccountSettings";
+import { NotFound } from "./components/notFound/NotFound";
 
 function App() {
   const user = useSelector(selectUser);
@@ -101,6 +102,7 @@ function App() {
               <Route path="settings/account" element={<AccountSettings />} />
               <Route path="report" element={<Report />} />
               <Route path="/u/:id" element={<Profile />} />
+              <Route path="/*" element={<NotFound />} />
             </Route>
           </Routes>
         </Router>

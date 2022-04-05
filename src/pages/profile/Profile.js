@@ -10,7 +10,7 @@ import { ReactComponent as Clink } from "../../assets/icons/link.svg";
 import { Loader } from "../../components/loader/Loader";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/features/userSlice";
-import { NotFound } from "../notFound/NotFound";
+import { NotFound } from "../../components/notFound/NotFound";
 
 export const Profile = () => {
   const { id } = useParams();

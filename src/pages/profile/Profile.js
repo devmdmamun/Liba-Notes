@@ -2,7 +2,7 @@
 import classes from "./Profile.module.css";
 
 // packages & hooks
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import { NavLink } from "react-router-dom";
 // components and assets
@@ -38,7 +38,7 @@ export const Profile = () => {
                 />
                 <div>
                   <p className={classes.name}>{document.displayName}</p>
-                  <span>{document.uid}</span>
+                  <span className={classes.uid}>{document.uid}</span>
                 </div>
               </div>
               {/* User bio */}
@@ -54,11 +54,18 @@ export const Profile = () => {
                 >
                   {document.pLink}
                 </a>
+                <div className={classes.editBtn}>
+                  {user.uid === id ? (
+                    <Link to="/settings/account">Edit profile</Link>
+                  ) : (
+                    <p>Connect</p>
+                  )}
+                </div>
               </div>
             </div>
             {/* profile navigation start */}
             <div className={classes.profileNav}>
-              <NavLink className={classes.activePNL} to={"/" + document.uid}>
+              <NavLink className={classes.activePNL} to={"/u/" + document.uid}>
                 Posts
               </NavLink>
               {user.uid === id ? (

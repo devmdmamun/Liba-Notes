@@ -15,15 +15,15 @@ export const AccountSettings = () => {
     <div className="dashPageContainer">
       <div className={classes.header}>
         <h2>Account info</h2>
-        <p>Make changes in your public and personal information</p>
+        <p>You can't make changes in * marked items.</p>
       </div>
 
       <div className={classes.public}>
         <h3>Public info</h3>
         <div className={classes.photo}>
           <div className={classes.infoTexts}>
-            <span className={classes.infoLabel}>Photo</span>
-            <span>Use a professional image of yourself</span>
+            <span className={classes.infoLabel}>Photo*</span>
+            <span>Your photo provided by google.</span>
           </div>
           <div className={classes.image}>
             <img className={classes.userImage} src={user.photoURL} alt="user" />
@@ -37,11 +37,8 @@ export const AccountSettings = () => {
 
         <div className={classes.infoUpdateBtn}>
           <div className={classes.infoTexts}>
-            <span className={classes.infoLabel}>Name</span>
-            <span>{user.displayName}</span>
-          </div>
-          <div className={classes.angleIconDiv}>
-            <RightAngle className={classes.angleIcon} />
+            <span className={classes.infoLabel}>Username*</span>
+            <span>{user.uid}</span>
           </div>
         </div>
 
@@ -49,8 +46,8 @@ export const AccountSettings = () => {
 
         <div className={classes.infoUpdateBtn}>
           <div className={classes.infoTexts}>
-            <span className={classes.infoLabel}>Username</span>
-            <span>{user.uid}</span>
+            <span className={classes.infoLabel}>Name</span>
+            <span>{user.displayName}</span>
           </div>
           <div className={classes.angleIconDiv}>
             <RightAngle className={classes.angleIcon} />

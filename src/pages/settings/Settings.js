@@ -23,7 +23,7 @@ export const Settings = () => {
         <Link to="/settings/account" className={classes.showcase}>
           <img className={classes.photo} src={user.photoURL} alt="User" />
           <h3>Account info...</h3>
-          <p>Update the personal and public information in your account.</p>
+          <p>Update your Soalig account information.</p>
         </Link>
       </div>
       <button onClick={logOut} className={classes.signOutBtn}>

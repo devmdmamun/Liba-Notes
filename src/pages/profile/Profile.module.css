@@ -13,16 +13,17 @@
   margin: auto;
 }
 .headerTop {
-  width: 360px;
+  /* width: 360px; */
   padding: 30px 0 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
 .profileImg {
   width: 70px;
   height: 70px;
+  margin-right: 20px;
   border: 3px solid black;
   border-radius: 50%;
   overflow: hidden;
@@ -36,9 +37,11 @@
   font-weight: bold;
   margin-bottom: 5px;
 }
+.uid {
+  font-size: 15px;
+}
 .bio {
   font-size: 17px;
-  font-weight: 600;
   margin-top: 15px;
   text-align: center;
 }
@@ -48,18 +51,27 @@
   align-items: center;
   justify-content: center;
 }
-.links a {
-  font-weight: bold;
-  margin: 0 0 10px 5px;
+.links a,
+.links p {
+  font-weight: 600;
   cursor: pointer;
 }
 .Clink {
   width: 20px;
   fill: blue;
-  margin-bottom: 10px;
 }
 .webLink {
   text-decoration: underline;
+}
+.editBtn {
+  padding: 7px 15px;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-left: 15px;
+  background-color: #e0e0e0;
+}
+.editBtn:hover {
+  background-color: white;
 }
 .profileNav {
   max-width: 600px;

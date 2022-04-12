@@ -1,0 +1,60 @@
+.updateProfileCont {
+  position: absolute;
+  top: 0;
+  z-index: 12;
+  background-color: rgba(91, 112, 131, 0.4);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.updateProfile {
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  margin: auto;
+  padding: 30px;
+  border-radius: 5px;
+}
+.updateProfileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  font-size: 18px;
+  padding: 5px 17px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+.updateProfileContent {
+  margin-top: 30px;
+}
+.UPInputDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.UPInputDiv span {
+  font-size: 13px;
+  font-weight: bold;
+  color: #636363;
+}
+.UPInputDiv input,
+.UPInputDiv textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  height: 30px;
+  font-size: 18px;
+  font-family: inherit;
+  margin-top: 5px;
+}
+.UPInputDiv textarea {
+  height: 75px;
+}

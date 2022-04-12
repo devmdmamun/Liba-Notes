@@ -2,12 +2,7 @@
 import "./App.css";
 
 // packages
-import {
-  BrowserRouter as Router,
-  Navigate,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "./app/features/userSlice";
 import { authstatus } from "./app/features/userSlice";
@@ -32,11 +27,15 @@ import { Loader } from "./components/loader/Loader";
 import { Profile } from "./pages/profile/Profile";
 import { AccountSettings } from "./pages/settings/AccountSettings";
 import { NotFound } from "./components/notFound/NotFound";
+import { UpdateProfile } from "./pages/profile/UpdateProfile";
 
 function App() {
   const user = useSelector(selectUser);
   const authStatus = useSelector((state) => state.user.authIsReady);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const background = location.state && location.state.background;
+  console.log(location);
 
   //To know user status.
   useEffect(() => {
@@ -69,8 +68,8 @@ function App() {
   return (
     <div className="App">
       {authStatus ? (
-        <Router>
-          <Routes>
+        <>
+          <Routes location={background || location}>
             <Route
               path="/signin"
               element={
@@ -100,12 +99,18 @@ function App() {
               <Route path="files" element={<Files />} />
               <Route path="settings" element={<Settings />} />
               <Route path="settings/account" element={<AccountSettings />} />
+              <Route path="settings/profile" element={<UpdateProfile />} />
               <Route path="report" element={<Report />} />
               <Route path="/u/:id" element={<Profile />} />
               <Route path="/*" element={<NotFound />} />
             </Route>
           </Routes>
-        </Router>
+          {background && (
+            <Routes>
+              <Route path="settings/profile" element={<UpdateProfile />} />
+            </Routes>
+          )}
+        </>
       ) : (
         <Loader />
       )}

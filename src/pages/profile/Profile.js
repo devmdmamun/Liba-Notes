@@ -2,7 +2,7 @@
 import classes from "./Profile.module.css";
 
 // packages & hooks
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import { NavLink } from "react-router-dom";
 // components and assets
@@ -15,6 +15,7 @@ import { NotFound } from "../../components/notFound/NotFound";
 export const Profile = () => {
   const { id } = useParams();
   const user = useSelector(selectUser);
+  const location = useLocation();
   const { document, error } = useDocument("users", id);
   if (error) {
     return <div>{error}</div>;
@@ -56,7 +57,12 @@ export const Profile = () => {
                 </a>
                 <div className={classes.editBtn}>
                   {user.uid === id ? (
-                    <Link to="/settings/account">Edit profile</Link>
+                    <Link
+                      to="/settings/profile"
+                      state={{ background: location }}
+                    >
+                      Edit profile
+                    </Link>
                   ) : (
                     <p>Connect</p>
                   )}

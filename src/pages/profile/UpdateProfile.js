@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/features/userSlice";
+import { useUpdateDoc } from "../../hooks/useUpdateDoc";
 
 export const UpdateProfile = () => {
   const navigate = useNavigate();
@@ -13,10 +14,11 @@ export const UpdateProfile = () => {
   const [name, setName] = useState(user.displayName);
   const [website, setWebsite] = useState(user.pLink);
   const [bio, setBio] = useState(user.bio);
+  const { update } = useUpdateDoc("users", user.uid);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Updated");
+    await update({ displayName: name, pLink: website, bio: bio });
     navigate(-1);
   };
 
@@ -40,11 +42,13 @@ export const UpdateProfile = () => {
           </label>
           <label className={classes.UPInputDiv}>
             <span>Website:</span>
-            <input
-              type="url"
-              onChange={(e) => setWebsite(e.target.value)}
-              value={website}
-            ></input>
+            <div className={classes.nested}>
+              <div>https://</div>
+              <input
+                onChange={(e) => setWebsite(e.target.value)}
+                value={website}
+              ></input>
+            </div>
           </label>
           <label className={classes.UPInputDiv}>
             <span>Bio:</span>

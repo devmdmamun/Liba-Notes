@@ -1,28 +1,23 @@
-import { doc, onSnapshot } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-export const useDocument = (cravedCollection, cravedId) => {
-  const [document, setDocument] = useState(null);
-  const [error, setError] = useState(null);
+export const useDocument = (collection, id) => {
+  const ref = doc(db, collection, id);
 
-  // getting realtime document
-  useEffect(() => {
-    const docRef = doc(db, cravedCollection, cravedId);
+  const update = async (documents) => {
+    await updateDoc(ref, {
+      ...documents,
+    });
+  };
 
-    const unSub = onSnapshot(
-      docRef,
-      (doc) => {
-        setDocument({ ...doc.data() });
-        setError(null);
-      },
-      (error) => {
-        console.log(error.message);
-        setError("Failed to get document");
-      }
-    );
-    return () => unSub();
-  }, [cravedCollection, cravedId]);
-
-  return { document, error };
+  const getDocument = async () => {
+    const docSnap = await getDoc(ref);
+    if (docSnap.exists()) {
+      const userData = docSnap.data();
+      return userData;
+    } else {
+      console.log("document not found");
+    }
+  };
+  return { update, getDocument };
 };

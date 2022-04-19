@@ -35,7 +35,6 @@ function App() {
   const dispatch = useDispatch();
   const location = useLocation();
   const background = location.state && location.state.background;
-  console.log(location);
 
   //To know user status.
   useEffect(() => {

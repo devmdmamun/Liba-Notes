@@ -4,9 +4,9 @@ import classes from "./UpdateProfile.module.css";
 // packages and hooks
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../app/features/userSlice";
-import { useUpdateDoc } from "../../hooks/useUpdateDoc";
+import { useDispatch, useSelector } from "react-redux";
+import { authstatus, selectUser } from "../../app/features/userSlice";
+import { useDocument } from "../../hooks/useDocument";
 
 export const UpdateProfile = () => {
   const navigate = useNavigate();
@@ -14,11 +14,14 @@ export const UpdateProfile = () => {
   const [name, setName] = useState(user.displayName);
   const [website, setWebsite] = useState(user.pLink);
   const [bio, setBio] = useState(user.bio);
-  const { update } = useUpdateDoc("users", user.uid);
+  const dispatch = useDispatch();
+  const { update, getDocument } = useDocument("users", user.uid);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await update({ displayName: name, pLink: website, bio: bio });
+    const data = await getDocument();
+    dispatch(authstatus(data));
     navigate(-1);
   };
 

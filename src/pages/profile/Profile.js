@@ -3,25 +3,29 @@ import classes from "./Profile.module.css";
 
 // packages & hooks
 import { Link, useLocation, useParams } from "react-router-dom";
-import { useDocument } from "../../hooks/useDocument";
+import { useGetDocument } from "../../hooks/useGetDocument";
 import { NavLink } from "react-router-dom";
+
 // components and assets
 import { ReactComponent as Clink } from "../../assets/icons/link.svg";
 import { Loader } from "../../components/loader/Loader";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../app/features/userSlice";
 import { NotFound } from "../../components/notFound/NotFound";
+import { Post } from "../../components/post/Post";
 
 export const Profile = () => {
   const { id } = useParams();
   const user = useSelector(selectUser);
   const location = useLocation();
-  const { document, error } = useDocument("users", id);
+  const { document, error } = useGetDocument("users", id);
+
   if (error) {
     return <div>{error}</div>;
   } else if (document && Object.keys(document).length === 0) {
     return <NotFound />;
   }
+
   return (
     <>
       {!document ? (
@@ -83,6 +87,9 @@ export const Profile = () => {
               ) : null}
             </div>
             {/* profile navigation end */}
+          </div>
+          <div className={classes.postCont}>
+            <Post />
           </div>
         </div>
       )}
